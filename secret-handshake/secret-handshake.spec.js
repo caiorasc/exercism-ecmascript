@@ -38,12 +38,12 @@ describe('Secret Handshake', () => {
 
   test('binary 10101 (hexadecimal 0x1F) is jump, close your eyes, double blink, and wink', () => {
     const handshake = new SecretHandshake(0x15);
-    expect(handshake.commands()).toEqual(['jump', 'close your eyes', 'double blink', 'wink']);
+    expect(handshake.commands()).toEqual(['close your eyes', 'wink']);
   });
 
   test('binary 101 (hexadecimal 0x05) is jump, close your eyes, double blink, and wink', () => {
     const handshake = new SecretHandshake(0x05);
-    expect(handshake.commands()).toEqual(['jump', 'close your eyes', 'double blink', 'wink']);
+    expect(handshake.commands()).toEqual(['close your eyes', 'wink']);
   });
 
   test('text is an invalid secret handshake', () => {
