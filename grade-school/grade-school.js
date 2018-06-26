@@ -1,20 +1,28 @@
 class School {
+    constructor() {
+        this.obj = new Object;
+    }
+
     roster() {
-        return {};
+        return this.obj;
     }
 
     add(name, grade) {
-        console.log(name, grade);
+        if (this.obj[grade] == undefined) {
+            this.obj[grade] = [];
+        }
+        
+        this.obj[grade].push(name);
+        this.obj[grade] = this.obj[grade].sort();
     }
 
-    roster() {
+    grade(gradeSchool) {
+        if (this.obj[gradeSchool] == undefined) {
+            this.obj[gradeSchool] = [];
+        }
 
-        return {};
+        return this.obj[gradeSchool];
     }
-
-
 }
-
-
 
 export default School;
