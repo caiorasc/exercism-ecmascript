@@ -1,28 +1,35 @@
 class School {
     constructor() {
-        this.obj = new Object;
+        this._obj = new Object;
     }
 
     roster() {
-        return this.obj;
+        let g = new Object;
+        let f = Object.keys(this._obj);
+        f.map(c => {
+            g[c] = this._obj[c].slice();
+        })
+        return g
     }
 
     add(name, grade) {
-        if (this.obj[grade] == undefined) {
-            this.obj[grade] = [];
+        if (this._obj[grade] == undefined) {
+            this._obj[grade] = [];
         }
-        
-        this.obj[grade].push(name);
-        this.obj[grade] = this.obj[grade].sort();
+
+        this._obj[grade].push(name);
+        this._obj[grade] = this._obj[grade].sort();
     }
 
     grade(gradeSchool) {
-        if (this.obj[gradeSchool] == undefined) {
-            this.obj[gradeSchool] = [];
+        if (this._obj[gradeSchool] == undefined) {
+            this._obj[gradeSchool] = [];
         }
 
-        return this.obj[gradeSchool];
+        let a = this._obj[gradeSchool].slice();
+        return a;
     }
+
 }
 
 export default School;
