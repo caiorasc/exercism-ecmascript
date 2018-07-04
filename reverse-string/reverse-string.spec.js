@@ -1,33 +1,33 @@
-import reverseString from './reverse-string';
+import Reverse from './reverse-string';
 
 describe('ReverseString', () => {
   test('empty string', () => {
     const expected = '';
-    const actual = reverseString('');
+    const actual = Reverse('');
     expect(actual).toEqual(expected);
   });
 
-  xtest('a word', () => {
+  test('a word', () => {
     const expected = 'tobor';
-    const actual = reverseString('robot');
+    const actual = Reverse('robot');
     expect(actual).toEqual(expected);
   });
 
-  xtest('a capitalized word', () => {
+  test('a capitalized word', () => {
     const expected = 'nemaR';
-    const actual = reverseString('Ramen');
+    const actual = Reverse('Ramen');
     expect(actual).toEqual(expected);
   });
 
-  xtest('a sentence with punctuation', () => {
+  test('a sentence with punctuation', () => {
     const expected = '!yrgnuh ma I';
-    const actual = reverseString('I am hungry!');
+    const actual = Reverse('I am hungry!');
     expect(actual).toEqual(expected);
   });
 
-  xtest('a palindrome', () => {
+  test('a palindrome', () => {
     const expected = 'racecar';
-    const actual = reverseString('racecar');
+    const actual = Reverse('racecar');
     expect(actual).toEqual(expected);
   });
 });
