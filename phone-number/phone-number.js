@@ -20,11 +20,11 @@ class PhoneNumber {
             }
         }
 
-        if (onlyNumbers[0] !== 1 && onlyNumbers.length > 11)
-            return result
+        if (onlyNumbers[0] == 1 && onlyNumbers.length == 11) {
+            result = onlyNumbers.substr(1, onlyNumbers.length);
 
-        result = onlyNumbers;
-
+        } else if (onlyNumbers.length == 10)
+            result = onlyNumbers;
         
         return result;
     }
