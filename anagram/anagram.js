@@ -4,7 +4,9 @@ class Anagram {
     }
 
     matches(matchArray) {
-        let matchArrayCopy = matchArray.slice();
+        var args = (typeof(matchArray) !== 'object') ? [...arguments] : matchArray;
+
+        let matchArrayCopy = args.slice();
         let result = [];
 
         for (let i = 0; i < matchArrayCopy.length; i++) {
@@ -14,7 +16,7 @@ class Anagram {
             let ordenateWord = this.word.join('');
 
             if (strElement == ordenateWord) {
-                result.push(matchArray[i]);
+                result.push(args[i]);
             }
         }
 

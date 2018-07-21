@@ -64,14 +64,14 @@ describe('Anagram', () => {
     expect(matches).toEqual([]);
   });
 
-  xtest('matches() accepts string arguments', () => {
+  test('matches() accepts string arguments', () => {
     const subject = new Anagram('ant');
     const matches = subject.matches('stand', 'tan', 'at');
 
     expect(matches).toEqual(['tan']);
   });
 
-  xtest('matches() accepts single string argument', () => {
+  test('matches() accepts single string argument', () => {
     const subject = new Anagram('ant');
     const matches = subject.matches('tan');
 
