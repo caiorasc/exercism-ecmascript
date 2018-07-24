@@ -1,5 +1,6 @@
 class Anagram {
     constructor(word) {
+        this.checkWord = word;
         this.word = word.toLowerCase().split('').sort();
     }
 
@@ -19,6 +20,9 @@ class Anagram {
                 result.push(args[i]);
             }
         }
+
+        if (result.length == 1 && result[0].toLowerCase() == this.checkWord)
+            return [];
 
         return result;
     }
