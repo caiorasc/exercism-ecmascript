@@ -4,13 +4,13 @@ class Acronyms {
         let acronym = [];
 
         for (let i = 0; i < toArr.length; i++) {
-            if (toArr[i].includes('-')) {
-                let subArr = toArr[i].split('-'); 
-                subArr.forEach(word => {
-                    acronym.push(word.substr(0,1));
-                });
-            } else {
-                acronym.push(toArr[i].substr(0, 1));
+            let word = toArr[i];
+            acronym.push(word[0]);
+
+            for (let j = 1; j < word.length; j++) {
+                if (/^[A-Z]+$/.test(word[j]) && /^[a-z]+$/.test(word[j-1]) || word[j-1] == '-') {
+                    acronym.push(word[j]);
+                }
             }
         }
 
