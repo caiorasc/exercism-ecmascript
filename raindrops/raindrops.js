@@ -1,8 +1,30 @@
 class Raindrops {
     convert(number) {
-        console.log(number);
+        let factors = [];
 
-        return null;
+        for (let i = 1; i <= 10; i++) {
+            if (number % i == 0) {
+                switch (i) {
+                    case 3:
+                        factors.push("Pling");
+                        break;
+
+                    case 5:
+                        factors.push("Plang");
+                        break;
+
+                    case 7:
+                        factors.push("Plong");
+                        break;
+                }
+            }
+        }
+
+        if (factors.length > 0) {
+            return factors.join('');
+        }
+
+        return number.toString()
     }
 }
 
