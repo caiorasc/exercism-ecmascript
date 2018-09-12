@@ -5,39 +5,39 @@ describe('Transpose', () => {
     expect(transpose([])).toEqual([]);
   });
 
-  xtest('two characters in a row', () => {
+  test('two characters in a row', () => {
     const input = ['A1'];
     const expected = ['A', '1'];
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('two characters in a column', () => {
+  test('two characters in a column', () => {
     const input = ['A', '1'];
     const expected = ['A1'];
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('simple', () => {
+  test('simple', () => {
     const input = ['ABC', '123'];
     const expected = ['A1', 'B2', 'C3'];
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('single line', () => {
+  test('single line', () => {
     const input = ['Single line.'];
     const expected = ['S', 'i', 'n', 'g', 'l', 'e', ' ', 'l', 'i', 'n', 'e', '.'];
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('first line longer than second line', () => {
+  test('first line longer than second line', () => {
     const input = ['The fourth line.', 'The fifth line.'];
-    const expected = ['TT', 'hh', 'ee', '  ', 'ff', 'oi', 'uf', 'rt', 'th', 'h ', ' l', 'li', 'in', 'ne', 'e.', '.'];
+    const expected = ['TT', 'hh', 'ee', '  ', 'ff', 'oi', 'uf', 'rt', 'th', 'h ', ' l', 'li', 'in', 'ne', 'e.', ' .'];
     expect(transpose(input)).toEqual(expected);
   });
 
   xtest('second line longer than first line', () => {
     const input = ['The first line.', 'The second line.'];
-    const expected = ['TT', 'hh', 'ee', '  ', 'fs', 'ie', 'rc', 'so', 'tn', ' d', 'l ', 'il', 'ni', 'en', '.e', ' .'];
+    const expected = ['TT', 'hh', 'ee', '  ', 'fs', 'ie', 'rc', 'so', 'tn', ' d', 'l ', 'il', 'ni', 'en', '.e', '.'];
     expect(transpose(input)).toEqual(expected);
   });
 
